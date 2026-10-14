@@ -1,0 +1,51 @@
+:root {
+  /* ---------- Base colors ---------- */
+  --primary-color:   #09080d;
+  --secondary-color: #14161b;
+  --surface-color:   #1a1d24;
+  --surface-hover:   #20242c;
+  --border-color:    #22252c;
+  --border-hover:    #3a3f4a;
+
+  /* ---------- Accent ---------- */
+  --tertiary-color:  #3d61a3;
+  --accent-color:    #2f6bff;
+  --accent-hover:    #2457d6;
+  --accent-soft:     rgba(47, 107, 255, 0.15);
+  --accent-glow:     rgba(47, 107, 255, 0.5);
+
+  /* ---------- Status colors ---------- */
+  --success:         #22c55e;
+  --success-soft:    rgba(34, 197, 94, 0.15);
+  --warning:         #f59e0b;
+  --warning-soft:    rgba(245, 158, 11, 0.15);
+  --error:           #ef4444;
+  --error-soft:      rgba(239, 68, 68, 0.15);
+
+  /* ---------- Text ---------- */
+  --text-primary:    #ffffff;
+  --text-secondary:  #e6e8ec;
+  --text-muted:      #c0c4cc;
+  --text-faint:      #7a8290;
+  --blurWhite:       rgb(162, 162, 162);
+
+  /* ---------- Layout ---------- */
+  --header-height:   60px;
+  --page-padding:    40px;
+  --form-max-width:  900px;
+  --sidebar-width:   240px;
+
+  /* ---------- Radii ---------- */
+  --radius-sm:       8px;
+  --radius-md:       12px;
+  --radius-lg:       14px;
+  --radius-pill:     999px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-card:     0 12px 30px rgba(0, 0, 0, 0.4);
+  --shadow-glow:     0 0 12px var(--accent-glow);
+
+  /* ---------- Transitions ---------- */
+  --transition:      0.25s ease;
+  --transition-fast: 0.15s ease;
+}

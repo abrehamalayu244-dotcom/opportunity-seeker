@@ -1,0 +1,283 @@
+/* =========================================================
+   APP SHELL — Header + Sidebar + Main
+   Used on: For You, Discover, Details
+   ========================================================= */
+
+.app {
+  min-height: 100vh;
+}
+
+/* =========================================================
+   TOP HEADER
+   ========================================================= */
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 24px;
+  background: var(--secondary-color);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+}
+
+.app-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.app-header .brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-color);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.app-header .brand-name {
+  color: var(--text-primary);
+}
+
+/* ---------- Search ---------- */
+.header-search {
+  flex: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.header-search svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  color: var(--text-faint);
+  pointer-events: none;
+}
+
+.header-search input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.header-search input::placeholder {
+  color: var(--text-faint);
+}
+
+.header-search input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ---------- Right cluster ---------- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.header-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--text-muted);
+  background: transparent;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.header-icon-btn:hover {
+  background: var(--surface-color);
+  color: var(--text-primary);
+}
+
+.header-icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 4px 8px 4px 4px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-fast);
+}
+
+.header-user:hover {
+  background: var(--surface-color);
+}
+
+.header-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.header-username {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.header-caret {
+  color: var(--text-faint);
+  font-size: 10px;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+.app-sidebar {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  background: var(--secondary-color);
+  border-right: 1px solid var(--border-color);
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+  z-index: 90;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.sidebar-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.sidebar-item:hover {
+  background: var(--surface-color);
+  color: var(--text-primary);
+}
+
+.sidebar-item.active {
+  background: var(--accent-soft);
+  border-left-color: var(--accent-color);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+.app-main {
+  margin-left: var(--sidebar-width);
+  padding-top: var(--header-height);
+  min-height: 100vh;
+}
+
+.app-content {
+  padding: 32px 40px;
+}
+
+/* =========================================================
+   MOBILE — collapse sidebar
+   ========================================================= */
+.menu-toggle {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover { color: var(--text-primary); }
+
+@media (max-width: 900px) {
+  .menu-toggle { display: flex; }
+
+  .app-header .brand-name { display: none; }
+
+  .app-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition);
+    z-index: 200;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.4);
+  }
+
+  .app-sidebar.is-open {
+    transform: translateX(0);
+  }
+
+  .app-main {
+    margin-left: 0;
+  }
+
+  .app-content {
+    padding: 20px 16px;
+  }
+
+  .header-search { max-width: none; }
+
+  .header-username { display: none; }
+}
+
+/* Backdrop for mobile drawer */
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+.sidebar-backdrop.is-open {
+  display: block;
+}

@@ -1,0 +1,170 @@
+/* ==================================================
+   SEARCH INPUT (used inside header)
+   ================================================== */
+.search-input {
+  display: flex;
+  flex: auto;
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.search-input::placeholder {
+  color: var(--text-faint);
+}
+
+.search-input:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ==================================================
+   LOGIN BUTTON (kept in case you reuse it)
+   ================================================== */
+.login-button {
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.login-button:hover {
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-glow);
+  transform: scale(1.05);
+}
+
+/* ==================================================
+   FILTER TEXT LABEL
+   ================================================== */
+.filters-text {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-faint);
+}
+
+/* ==================================================
+   LEFT PART OF FILTERS (kept consistent)
+   ================================================== */
+.left-part-filters {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==================================================
+   SELECT STYLING (fallback if not wrapped in .filter-box)
+   ================================================== */
+.category,
+.location,
+.date-posted {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  cursor: pointer;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.category:hover,
+.location:hover,
+.date-posted:hover {
+  border-color: var(--accent-color);
+}
+
+.category:focus,
+.location:focus,
+.date-posted:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+/* ==================================================
+   QUICK FILTER (fallback if used outside main-style)
+   ================================================== */
+.quick-filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--surface-color);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  height: 34px;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.quick-filter:hover {
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+}
+
+.quick-filter:focus,
+.quick-filter.active {
+  background-color: var(--accent-color);
+  color: var(--text-primary);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-glow);
+}
+
+/* ==================================================
+   DETAIL ITEM PAGE (if you add a details view later)
+   ================================================== */
+.detail-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.detail-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.detail-subtitle {
+  color: var(--text-faint);
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.detail-description {
+  margin-top: 20px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}

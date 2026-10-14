@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover — Opportunity Seeker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/general.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/main-style.css" />
+  <link rel="stylesheet" href="styles/detail-items-style.css" />
+  <link rel="stylesheet" href="styles/v1-fixes.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <main class="app-main">
+      <div class="app-content">
+
+        <header class="page-head">
+          <div>
+            <h1>Discover Opportunities</h1>
+            <p>Explore the prototype directory. Sample listings are illustrative and must be verified before applying.</p>
+          </div>
+          <div class="page-head-actions"><span class="results-count" aria-live="polite"></span><label class="sort-control">Sort by <select class="sort-by"><option value="deadline-soon">Deadline soonest</option><option value="newest">Recently posted</option><option value="oldest">Oldest posted</option><option value="deadline-late">Deadline latest</option></select></label></div>
+        </header>
+
+        <!-- ===== Opportunity search ===== -->
+        <section class="discovery-search-panel" role="search" aria-label="Search opportunities">
+          <label class="discovery-search-label" for="discovery-search-input">Find your next opportunity</label>
+          <div class="discovery-search-row">
+            <span class="discovery-search-icon" aria-hidden="true">⌕</span>
+            <input id="discovery-search-input" class="search-input discovery-search" type="search" autocomplete="off"
+              placeholder="Search by title, company, location, category, field, skill, or keyword…"
+              aria-describedby="discovery-search-help" />
+            <button class="discovery-search-clear" type="button" aria-label="Clear search" hidden>Clear</button>
+          </div>
+          <p id="discovery-search-help" class="discovery-search-help">Try “Addis Ababa”, “scholarship”, a company name, or a skill.</p>
+        </section>
+
+        <!-- ===== Filters ===== -->
+        <section class="filters">
+          <div class="left-part-filters">
+            <div class="filters-text">Filters</div>
+
+            <label class="filter-box">
+              <span class="filter-label">Category</span>
+              <select class="category">
+                <option value="All">All</option>
+                <option value="Internship">Internship</option>
+                <option value="Job">Job</option>
+                <option value="Scholarship">Scholarship</option>
+                <option value="Competition">Competition</option>
+                <option value="Conference">Conference</option>
+                <option value="Fellowship">Fellowship</option>
+                <option value="Volunteer">Volunteer</option>
+                <option value="Hackathon">Hackathon</option>
+                <option value="Research">Research</option>
+                <option value="Training">Training</option>
+                <option value="Grant">Grant</option>
+                <option value="Award">Award</option>
+                <option value="Mentorship">Mentorship</option>
+                <option value="Startup">Startup</option>
+              </select>
+            </label>
+
+            <label class="filter-box">
+              <span class="filter-label">Location</span>
+              <select class="location">
+                <option value="All">All</option>
+                <option value="Remote">Remote</option>
+                <option value="On-site">On-site</option>
+                <option value="Ethiopia">Ethiopia</option>
+                <option value="International">International</option>
+                <option value="Hybrid">Hybrid</option>
+              </select>
+            </label>
+
+            <label class="filter-box">
+              <span class="filter-label">Date Posted</span>
+              <select class="date-posted">
+                <option value="All">All</option>
+                <option value="Last 24 hours">Last 24 hours</option>
+                <option value="Last 7 days">Last 7 days</option>
+                <option value="Last 30 days">Last 30 days</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="quick-filters-buttons">
+            <button class="quick-filter" data-filter="search" data-value="Engineering">Engineering</button>
+            <button class="quick-filter" data-filter="search" data-value="Design">Design</button>
+            <button class="quick-filter" data-filter="search" data-value="Marketing">Marketing</button>
+            <button class="quick-filter" data-filter="search" data-value="Software Development">Software Development</button>
+            <button class="quick-filter" data-filter="category" data-value="Scholarship">Scholarship</button>
+            <button class="quick-filter" data-filter="category" data-value="Internship">Internship</button>
+          </div>
+        </section>
+
+        <!-- ===== Cards ===== -->
+        <section class="opportunities" aria-live="polite"></section>
+
+        <!-- ===== Pagination ===== -->
+        <div class="pagination">
+          <button>‹</button>
+          <button class="active">1</button>
+          <button>2</button>
+          <button>3</button>
+          <span>…</span>
+          <button>10</button>
+          <button>›</button>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script type="module">
+    import { mountShell } from './javascript/shell.js';
+    mountShell('discover');
+  </script>
+  <script type="module" src="javascript/discover.js"></script>
+</body>
+</html>
